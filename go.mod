@@ -6,8 +6,6 @@ toolchain go1.21.5
 
 require (
 	github.com/fatih/color v1.16.0
-	github.com/getsentry/sentry-go v0.27.0
-	github.com/joho/godotenv v1.5.1
 	github.com/labstack/echo/v5 v5.0.0-20230722203903-ec5b858dab61
 	github.com/mattn/go-sqlite3 v1.14.22
 	github.com/pocketbase/dbx v1.10.1
