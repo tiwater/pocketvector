@@ -1,0 +1,11 @@
+/.direnv
+/pb_data
+/pb_migrations
+
+.DS_Store
+
+.env.local
+
+/tmp
+
+/result
