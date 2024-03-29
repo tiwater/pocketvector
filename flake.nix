@@ -69,7 +69,7 @@
             CGO_ENABLED = 1;
             doCheck = false;
 
-            vendorHash = "sha256-8cLOnMiOqhGWMh54IciASClsbLMJCrv8sKO0T6CxAAw="; # pkgs.lib.fakeHash;
+            vendorHash = "sha256-Q0xrXD/jXi9NBssuX1n/Q/DpHxYzWDb5Yh//CvwN87Q="; # pkgs.lib.fakeHash;
 
             postInstall = ''
               ${patchLibs}

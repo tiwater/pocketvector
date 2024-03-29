@@ -7,8 +7,6 @@ import (
 	"strings"
 	"time"
 
-	"github.com/getsentry/sentry-go"
-	"github.com/joho/godotenv"
 	"github.com/pocketbase/pocketbase"
 	"github.com/pocketbase/pocketbase/apis"
 	"github.com/pocketbase/pocketbase/core"
@@ -20,23 +18,6 @@ import (
 )
 
 func main() {
-	// Load .env files
-	godotenv.Load(".env.local")
-	godotenv.Load()
-
-	// init sentry
-	err := sentry.Init(sentry.ClientOptions{
-		Dsn: "https://2f548bb751de408dbace9fdf4dfd0f67@o506929.ingest.sentry.io/4505356589924352",
-		// Set TracesSampleRate to 1.0 to capture 100%
-		// of transactions for performance monitoring.
-		// We recommend adjusting this value in production,
-		TracesSampleRate: 1.0,
-	})
-
-	if err != nil {
-		log.Fatalf("sentry.Init: %s", err)
-	}
-
 	app := pocketbase.New()
 	// TODO: Lazy initlization
 	vssDao, err := vss.NewDao(app)
