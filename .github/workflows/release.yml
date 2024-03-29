@@ -22,7 +22,7 @@ jobs:
       - name: Build
         run: nix build .
       - name: Zip
-        run: bsdtar -cvf "pocketvector_$(echo $GITHUB_REF_NAME | sed 's/v//g')_linux_amd64.zip" --format=zip -C ./result/ .
+        run: (cd ./result && zip -r - .) > "pocketvector_$(echo $GITHUB_REF_NAME | sed 's/v//g')_linux_amd64.zip" 
       - name: Release
         uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/')
